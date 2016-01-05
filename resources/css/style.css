@@ -361,7 +361,7 @@ cite img {
 	border-radius: 5px;
 	width: 90%;
 	margin-left: 5%;
-	box-shadow: 02 4px 4px #969696; 
+	box-shadow: 0 4px 4px #969696; 
 }
 .plan-box div {
 	padding: 15px;
@@ -420,9 +420,75 @@ textarea {
 input[type=checkbox]{
 	margin: 10px 5px 10px 0;
 }
-input[type=submit] {
-	float: right;
-	margin-top: 10px;
-}
 *:focus {outline: none;}
+/* ------------------------------------------*/
+/* FOOTER  */
+/* ------------------------------------------*/
 
+footer {
+	background-color: #333;
+	padding: 50px;
+	font-size: 80%;
+}
+.footer-nav {
+	list-style: none;
+	float: left;
+}
+.social-links {
+	list-style: none;
+	float: right;
+}
+
+.footer-nav li,
+.social-links li {
+	display: inline-block;
+	margin-right: 20px;
+}
+.footer-nav li:last-child,
+.social-links li:last-child {
+	margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited
+{
+	text-decoration: none;
+	border: 0;
+	color: #888;
+	transition: color 0.2s;
+}
+.footer-nav li a:hover,
+.footer-nav li a:active
+{
+	color: #ddd;
+}
+.social-links li a:link,
+.social-links li a:visited {
+	font-size: 160%;
+}
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram{
+	transition: color 0.2s;	
+}
+.ion-social-facebook:hover {
+	color: #3b5998;
+}
+.ion-social-twitter:hover {
+	color: #00aced;
+}
+.ion-social-googleplus:hover {
+	color: #dd4b39;
+}
+.ion-social-instagram:hover {
+	color: #517fa4;
+}
+
+footer p {
+	color: #888;
+	text-align: center;
+	margin-top: 80px;
+}
