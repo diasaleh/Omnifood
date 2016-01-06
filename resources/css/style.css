@@ -230,7 +230,7 @@ header {
 	border-bottom: 2px solid #e67e22;
 }
 
-/* ---- Main navi*/
+/* ---- sticky navi*/
 .sticky {
 	position: fixed;
 	top: 0;
@@ -251,6 +251,19 @@ header {
 .sticky .logo-black {
 	display: block;
 }
+
+/* mobile navi */
+.mobile-nav-icon {
+	float: right;
+	margin-top: 30px;
+	cursor: pointer;
+	display: none;
+}
+.mobile-nav-icon i {
+	font-size: 200%;
+	color: white;
+}
+
 /*-----------------------------FEATURES --------------------*/
 
 .section-features .long-copy {
