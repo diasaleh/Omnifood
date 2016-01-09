@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta charset="UTF-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Omnifood is a fictitious premium food delivery service with the mission to bring affordable and healthy meals to as many people as possible.">
 		<link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
 		<link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
@@ -249,19 +251,19 @@
 				<div class="col span-1-of-3">
 					<blockquote>
 					Omnifood is just awesome! I just launched a startup which leaves me with no time for cooking, so Omnifood is a life-saver. Now that I got used to it, I couldn't live without my daily meals!	
-						<cite><img src="resources/img/customer-1.jpg"> Alberto Duncan</cite>
+						<cite><img src="resources/img/customer-1.jpg" alt="Customer 1 photo"> Alberto Duncan</cite>
 					</blockquote>
 				</div>
 				<div class="col span-1-of-3">
 					<blockquote>
 					Inexpensive, healthy and great-tasting meals, delivered right to my home. We have lots of food delivery here in Lisbon, but no one comes even close to Omifood. Me and my family are so in love!
-						<cite><img src="resources/img/customer-2.jpg"> Joana Silva</cite>
+						<cite><img src="resources/img/customer-2.jpg" alt="Customer 2 photo"> Joana Silva</cite>
 					</blockquote>
 				</div>
 				<div class="col span-1-of-3">
 					<blockquote>
 					I was looking for a quick and easy food delivery service in San Franciso. I tried a lot of them and ended up with Omnifood. Best food delivery service in the Bay Area. Keep up the great work!
-						<cite><img src="resources/img/customer-3.jpg"> Milton Chapman</cite>
+						<cite><img src="resources/img/customer-3.jpg" alt="Customer 3 photo"> Milton Chapman</cite>
 					</blockquote>
 				</div>
 			</div>
@@ -333,68 +335,85 @@
 				</div>
 			</div>
 		</section>
-		<section class="section-form">
-			<div class="row">
-				<h2>We&rsquo;re happy to hear from you</h2>
+		<div class="map-box">
+			<div class="map"></div>
+				<div class="form-box" id="form">
+					<div class="row">
+						<h2>We&rsquo;re happy to hear from you</h2>
+					</div>
+					<div class="row">
+						<form method="post" action="mailer.php" class="contact-form">
+							<div class="row">
+							<?php
+								if($_GET['success'] == 1){
+									echo "<div class=\"form-messages success\">Thank You! Your message has been sent.</div>";
+								}
+								if($_GET['success'] == -1){
+									echo "<div class=\"form-messages error\">Oops! Something went wrong. Plese try again!</div>";
+								}
+								if($_GET['success'] == 2){
+									echo "<div class=\"form-messages error\"> your message didnot sent!</div>";
+								}
+							?>
+							</div>
+							<div class="row">
+						
+								<div class="col span-1-of-3">
+									<label for="name">Name</label>
+								</div>
+								<div class="col span-2-of-3">
+									<input type="text" name="name" id="name" placeholder="Your name" required>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col span-1-of-3">
+									<label for="email">Email</label>
+								</div>
+								<div class="col span-2-of-3">
+									<input type="email" name="email" id="email" placeholder="Your email" required>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col span-1-of-3">
+									<label for="find-us">How did you find us?</label>
+								</div>
+								<div class="col span-2-of-3">
+									<select name="find-ud" id="find-us">
+										<option value="friends" selected>Friends</option>
+										<option value="search">Search engine</option>
+										<option value="ad">Advertisement</option>
+										<option value="other">Others</option>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col span-1-of-3">
+									<label>Newsletter</label>
+								</div>
+								<div class="col span-2-of-3">
+									<input type="checkbox" name="news" id="news" checked>Yes, please.
+								</div>
+							</div>
+							<div class="row">
+								<div class="col span-1-of-3">
+									<label>Drop us a line</label>
+								</div>
+								<div class="col span-2-of-3">
+									<textarea name="message" placeholder="Your messege"></textarea>
+								</div>
+							</div>
+								<div class="row">
+								<div class="col span-1-of-3">
+									<label>&nbsp;</label>
+								</div>
+								<div class="col span-2-of-3">
+									<input type="submit" value="Send it! ">
+								</div>
+							</div>
+						</form>
+					</div>
+				 </div>
 			</div>
-			<div class="row">
-				<form method="post" action="#" class="contact-form">
-					<div class="row">
-						<div class="col span-1-of-3">
-							<label for="name">Name</label>
-						</div>
-						<div class="col span-2-of-3">
-							<input type="text" name="name" id="name" placeholder="Your name" required>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col span-1-of-3">
-							<label for="email">Email</label>
-						</div>
-						<div class="col span-2-of-3">
-							<input type="email" name="email" id="email" placeholder="Your email" required>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col span-1-of-3">
-							<label for="find-us">How did you find us?</label>
-						</div>
-						<div class="col span-2-of-3">
-							<select name="find-ud" id="find-us">
-								<option value="friends" selected>Friends</option>
-								<option value="search">Search engine</option>
-								<option value="ad">Advertisement</option>
-								<option value="other">Others</option>
-							</select>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col span-1-of-3">
-							<label>Newsletter</label>
-						</div>
-						<div class="col span-2-of-3">
-							<input type="checkbox" name="news" id="news" checked>Yes, please.
-						</div>
-					</div>
-					<div class="row">
-						<div class="col span-1-of-3">
-							<label>Drop us a line</label>
-						</div>
-						<div class="col span-2-of-3">
-							<textarea name="message" placeholder="Your messege"></textarea>
-						</div>
-					</div>
-						<div class="row">
-						<div class="col span-1-of-3">
-							<label>&nbsp;</label>
-						</div>
-						<div class="col span-2-of-3">
-							<input type="submit" value="Send it! ">
-						</div>
-					</div>
-				</form>
-			</div>
-		</section>
 		
 		<footer>
 			<div class="row">
@@ -417,19 +436,23 @@
 				</div>
 				<div class="row">
 					<p>
-						Copyright &copy; 2015 by Omnifood. All right reserved.
+						Copyright &copy; 2016 by Omnifood. All right reserved.
 					</p>
 				</div>
+			</div>
 			</div>
 		</footer>
 		
 		
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>	
-	<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-	<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-	<script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
-	<script src="vendors/js/jquery.waypoints.min.js"></script>	
-	<script src="resources/js/script.js" ></script>	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>	
+		<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+		<script src="vendors/js/jquery.waypoints.min.js"></script>
+		<script src="http://maps.google.com/maps/api/js"></script>
+		<script src="resources/js/script.js" ></script>	
+		<script src="resources/js/gmaps.js"></script>
+
 		
 	</body>
 

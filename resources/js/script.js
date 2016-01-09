@@ -17,7 +17,7 @@ $(document).ready(function () {
 	
 	/* scroll on button */
 	$('.js--scroll-to-plans').click(function(){
-		$('html, body').animate({scrollTop: $('.js--section-plans').offset().top}, 1000);
+		$('html, body').animate({scrollTop: $('.js--section-plans').offset().top }, 1000);
 		
 	});
 		
@@ -45,25 +45,25 @@ $(document).ready(function () {
 	$('.js--wp-1').waypoint(function(direction){
 		$('.js--wp-1').addClass('animated fadeIn');
 	}, {
-		offset: '50%'
+		offset: '60%'
 	});
 		$('.js--wp-2').waypoint(function(direction){
 		$('.js--wp-2').addClass('animated fadeInUp');
 	}, {
-		offset: '50%'
+		offset: '60%'
 	});
 			
 		$('.js--wp-3').waypoint(function(direction){
 		$('.js--wp-3').addClass('animated fadeIn');
 	}, {
-		offset: '50%'
+		offset: '60%'
 	});
 				
 		
 	$('.js--wp-4').waypoint(function(direction){
 		$('.js--wp-4').addClass('animated pulse');
 	}, {
-		offset: '50%'
+		offset: '60%'
 	});	
 	
 	$('.js--hello').waypoint(function(direction){
@@ -86,5 +86,20 @@ $(document).ready(function () {
 		}
 		
 	});
+ var map = new GMaps({
+  div: '.map',
+  lat: 32.2250332,
+  lng: 35.2784778,
+	zoom: 15
+});
+	
+	map.addMarker({
+	  lat: 32.2250332,
+	  lng: 35.25,
+	  title: 'Nablus',
+		infoWindow: {
+		  content: '<p>Our Location in Nablus</p>'
+		}
+});
 	
 });
